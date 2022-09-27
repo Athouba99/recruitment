@@ -1,41 +1,71 @@
 # This function returns a list of skills.
 # This is the list that the user will choose from
 # Add at least 3 random skills for the user to select from
+# func 1 only printing for the  to the user  
 def get_skills():
-    ...
-
+    skills = ["fast", "running","programming", "sleep" ]
+    print (skills) 
+  
 
 # This function pretty prints the skills to the user
 # It takes the list of skills as an argument and prints them numbered
 # This function doesn't return anything
-def show_skills(skills):
-    ...
+# func 2 only printing to user  all the skills  
 
+def show_skills(skills):
+    for skill in range(len(skills)):
+        print(skills[skill])
+        print("\n \t Skills : \n")
+        print("1.{skills[0]}\n")
+        print("2.{skills[1]}\n")
+        print("3.{skills[2]}\n")
+        print("3.{skills[3]}\n") 
+
+    return show_skills  
+ 
 
 # Shows the available skills and have user pick from them two skills
 # HINT: Use previous built functions to show the skills
 # For example, if the user enters 1, the first skill in your list of skills will be added to the list
 # Return a list of the two skills that the user inputted
+# func 3 
 def get_user_skills(skills):
-    ...
+    get_skills()
+    print(get_skills)
+    number = int(input("select only 2 skills"))
+    print ("you picked ", number) 
+    
+    return get_user_skills   
 
 
 # This function will get the user's cv from their inputs
 # HINT: Use previous built functions to get the skills from the user
+# func 4 
 def get_user_cv(skills):
-    ...
+    
+    strs = input("enter information to make a cv:")
+    d = dict (input ("enter a value: ").split() for _ in range(n) )
+    print (d) 
+    
+
 
 
 # This functions checks if the cv is acceptable or not, by checking the age, experience and skills and return a boolean (True or False) based on that
+# func 5 
 def check_acceptance(cv, desired_skill):
     ...
 
-
+# main func 
 def main():
     # Write your main logic here by combining the functions above into the
     # desired outcome
-    ...
-
+    '''
+    get_skills()
+    show_skills(skills)
+    get_user_skills(skills)
+    get_user_cv(skills) 
+     
 
 if __name__ == "__main__":
     main()
+    '''
