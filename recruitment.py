@@ -40,11 +40,23 @@ def get_user_skills(skills):
 # HINT: Use previous built functions to get the skills from the user
 # func 4 
 def get_user_cv(skills):
-    
-    strs = input("enter information to make a cv:")
+    cv = {} # empty dict
+    user_cv = True
+    while (user_cv): # loop for the user to add name,age,&cv 
+        name = input("\nWhat is your name?\t")
+        age = input ("\nHow old are you?\t")
+        experience = input("\nHow many years of experiencedo you have?\t")
+
+    # storing the inputs to dict 
+    user_cv[name] = "name"
+    user_cv[age] = "age" 
+    user_cv[experience] = "experience"
+
+
+    ''' 
     d = dict (input ("enter a value: ").split() for _ in range(n) )
     print (d) 
-    
+    '''
 
 
 
