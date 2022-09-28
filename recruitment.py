@@ -28,10 +28,12 @@ def show_skills(skills):
 def get_user_skills(skills):
     get_skills() # invok func 
     print(skills_list)
-    number = int(input("select only 2 skills"))
+    new_list = []
+    number = int(input("select only 2 skills: "))
     print ("you picked ", number) 
-
+    new_list.update(number)
     return get_user_skills   
+    ''' using loop to make sure only are picked'''
 
 
 # This function will get the user's cv from their inputs
