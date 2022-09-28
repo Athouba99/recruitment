@@ -52,23 +52,53 @@ def get_user_cv(skills):
     user_cv[age] = "age" 
     user_cv[experience] = "experience"
 
+    # assigning an output for func 3  
 
-    ''' 
-    d = dict (input ("enter a value: ").split() for _ in range(n) )
-    print (d) 
-    '''
-
-
+    
 
 # This functions checks if the cv is acceptable or not, by checking the age, experience and skills and return a boolean (True or False) based on that
 # func 5 
 def check_acceptance(cv, desired_skill):
-    ...
+    get_skills() #invok function 
+    get_user_cv(skills) #invok function 
 
-# main func 
+    if age >= 40 <= 25:
+        if experience > 3:
+            if skills in skills_list:
+                return True 
+
+        
+
+# main func No.6 
 def main():
     # Write your main logic here by combining the functions above into the
     # desired outcome
+
+
+    #1
+    print("Welcome to the special recruitment program, please answer the following questions:") # welcome message 
+    
+    #2
+     
+     get_skills = skills #assignment
+     get_skills() #func cal
+     print(skills)
+
+    #3
+    check_acceptance(cv, desired_skill) # func call 
+    skills_list[2] = desired_skill 
+
+    #4
+    if check_acceptance is True:
+        print("You have been accepted,", name)
+    else:
+        print("Sorry you are not accepted", name)
+
+    
+if __name__ == "__main__":
+    main() 
+    
+    
     '''
     get_skills()
     show_skills(skills): # len of the func will be used 
@@ -83,6 +113,5 @@ def main():
     get_user_cv(skills) 
      
 
-if __name__ == "__main__":
-    main()
+
     '''
