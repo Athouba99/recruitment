@@ -3,8 +3,9 @@
 # Add at least 3 random skills for the user to select from
 # func 1 only printing for the  to the user  
 def get_skills():
-    skills = ["fast", "running","programming", "sleep" ]
-    print (skills) 
+    skills_list = ["fast", "communication","programming", "listening"] # list 
+    return skills_list # to save the the array and give its value when needed
+
   
 
 # This function pretty prints the skills to the user
@@ -13,15 +14,10 @@ def get_skills():
 # func 2 only printing to user  all the skills  
 
 def show_skills(skills):
-    for skill in range(len(skills)):
-        print(skills[skill])
-        print("\n \t Skills : \n")
-        print("1.{skills[0]}\n")
-        print("2.{skills[1]}\n")
-        print("3.{skills[2]}\n")
-        print("3.{skills[3]}\n") 
-
+    for skill in skills:
+        print(get_skills()) # invok func and print it 
     return show_skills  
+    show_skills(skills_list)
  
 
 # Shows the available skills and have user pick from them two skills
@@ -30,11 +26,11 @@ def show_skills(skills):
 # Return a list of the two skills that the user inputted
 # func 3 
 def get_user_skills(skills):
-    get_skills()
-    print(get_skills)
+    get_skills() # invok func 
+    print(skills_list)
     number = int(input("select only 2 skills"))
     print ("you picked ", number) 
-    
+
     return get_user_skills   
 
 
@@ -61,7 +57,14 @@ def main():
     # desired outcome
     '''
     get_skills()
-    show_skills(skills)
+    show_skills(skills): # len of the func will be used 
+      print(skills[skill])
+        print("\n \t Skills : \n")
+        print("1.{skills[0]}\n")
+        print("2.{skills[1]}\n")
+        print("3.{skills[2]}\n")
+        print("3.{skills[3]}\n") 
+
     get_user_skills(skills)
     get_user_cv(skills) 
      
