@@ -3,10 +3,8 @@
 # Add at least 3 random skills for the user to select from
 # func 1 only printing for the  to the user  
 def get_skills():
-    skills_list = ["fast", "communication","programming", "listening"] # list 
-    return skills_list # to save the the array and give its value when needed
-
-  
+     return ["fast", "communication","programming", "listening"] # to save the the array and give its value when needed  
+     
 
 # This function pretty prints the skills to the user
 # It takes the list of skills as an argument and prints them numbered
@@ -14,43 +12,33 @@ def get_skills():
 # func 2 only printing to user  all the skills  
 
 def show_skills(skills):
-    for skill in skills:
-        print(get_skills()) # invok func and print it 
-    return show_skills  
-    show_skills(skills_list)
- 
-
+    print ()
+    print("Skills:") # to be show as the sample output 
+    for idx,skill in enumerate(skills,start=1):
+        print(f"{idx}.{skill}\n")
+        #print(get_skills()) # invok func and print it 
+     
+    
 # Shows the available skills and have user pick from them two skills
 # HINT: Use previous built functions to show the skills
 # For example, if the user enters 1, the first skill in your list of skills will be added to the list
 # Return a list of the two skills that the user inputted
 # func 3 
 def get_user_skills(skills):
-    get_skills() # invok func 
-    print(skills_list)
-    new_list = []
-    number = int(input("select only 2 skills: "))
-    print ("you picked ", number) 
-    new_list.update(number)
-    return get_user_skills   
-    ''' using loop to make sure only are picked'''
-
+    show_skills(skills) # call func 
+    
+    new_list = [ input("please choose a skill from above by entering its name: "), input("please choose another skill from above by entering its number: "),]
+    return [skills[int(selected) - 1] for selected in new_list]
+      
 
 # This function will get the user's cv from their inputs
 # HINT: Use previous built functions to get the skills from the user
 # func 4 
 def get_user_cv(skills):
-    cv = {} # empty dict
-    user_cv = True
-    while (user_cv): # loop for the user to add name,age,&cv 
-        name = input("\nWhat is your name?\t")
-        age = input ("\nHow old are you?\t")
-        experience = input("\nHow many years of experiencedo you have?\t")
-
-    # storing the inputs to dict 
-    user_cv[name] = "name"
-    user_cv[age] = "age" 
-    user_cv[experience] = "experience"
+    cv ={"name": input ("what is your name?"),
+          "age": int(input("how old are you?")),
+          "experience": int(input("how many years of experince do you have?")),
+          "skills": get_user_skills(skills),}
 
     # assigning an output for func 3  
 
@@ -59,6 +47,7 @@ def get_user_cv(skills):
 # This functions checks if the cv is acceptable or not, by checking the age, experience and skills and return a boolean (True or False) based on that
 # func 5 
 def check_acceptance(cv, desired_skill):
+    '''
     get_skills() #invok function 
     get_user_cv(skills) #invok function 
 
@@ -66,7 +55,9 @@ def check_acceptance(cv, desired_skill):
         if experience > 3:
             if skills in skills_list:
                 return True 
-
+    '''
+    return (
+        25 < cv["age"] < 40 and cv["experience" > 3 and desired_skill in cv["skilld"]] ) 
         
 
 # main func No.6 
@@ -80,19 +71,20 @@ def main():
     
     #2
      
-     get_skills = skills #assignment
-     get_skills() #func cal
-     print(skills)
+    skills = get_skills #assignment
+    wanted_skill = 2
 
     #3
-    check_acceptance(cv, desired_skill) # func call 
-    skills_list[2] = desired_skill 
+    cv = get_user_cv(skills) 
 
     #4
-    if check_acceptance is True:
-        print("You have been accepted,", name)
+    if check_acceptance(cv, skills[wanted_skill]):
+            print(f"you have been accepted, {cv['name']}.")
     else:
-        print("Sorry you are not accepted", name)
+            print("sorry, you have been rejected.")
+        
+
+  
 
     
 if __name__ == "__main__":
@@ -111,7 +103,4 @@ if __name__ == "__main__":
 
     get_user_skills(skills)
     get_user_cv(skills) 
-     
-
-
     '''
