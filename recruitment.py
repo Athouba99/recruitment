@@ -17,7 +17,7 @@ def show_skills(skills):
     for idx,skill in enumerate(skills,start=1):
         print(f"{idx}.{skill}\n")
         #print(get_skills()) # invok func and print it 
-     
+    return (skills)
     
 # Shows the available skills and have user pick from them two skills
 # HINT: Use previous built functions to show the skills
@@ -27,7 +27,7 @@ def show_skills(skills):
 def get_user_skills(skills):
     show_skills(skills) # call func 
     
-    new_list = [ input("please choose a skill from above by entering its name: "), input("please choose another skill from above by entering its number: "),]
+    new_list = [ input("please choose a skill from above by entering its number: "), input("please choose another skill from above by entering its number: "),]
     return [skills[int(selected) - 1] for selected in new_list]
       
 
@@ -39,6 +39,7 @@ def get_user_cv(skills):
           "age": int(input("how old are you?")),
           "experience": int(input("how many years of experince do you have?")),
           "skills": get_user_skills(skills),}
+    return cv 
 
     # assigning an output for func 3  
 
@@ -56,8 +57,9 @@ def check_acceptance(cv, desired_skill):
             if skills in skills_list:
                 return True 
     '''
+    print("age: ",cv["age"]," experience: ",cv["experience"]," desired skill: ", desired_skill," skills: ", cv["skills"])
     return (
-        25 < cv["age"] < 40 and cv["experience" > 3 and desired_skill in cv["skilld"]] ) 
+        25 < cv["age"] < 40 and cv["experience"] > 3 and desired_skill in cv["skills"] ) 
         
 
 # main func No.6 
@@ -71,36 +73,19 @@ def main():
     
     #2
      
-    skills = get_skills #assignment
+    skills = get_skills() #assignment
     wanted_skill = 2
 
     #3
     cv = get_user_cv(skills) 
-
+    
     #4
     if check_acceptance(cv, skills[wanted_skill]):
             print(f"you have been accepted, {cv['name']}.")
     else:
             print("sorry, you have been rejected.")
         
-
-  
-
     
 if __name__ == "__main__":
     main() 
     
-    
-    '''
-    get_skills()
-    show_skills(skills): # len of the func will be used 
-      print(skills[skill])
-        print("\n \t Skills : \n")
-        print("1.{skills[0]}\n")
-        print("2.{skills[1]}\n")
-        print("3.{skills[2]}\n")
-        print("3.{skills[3]}\n") 
-
-    get_user_skills(skills)
-    get_user_cv(skills) 
-    '''
